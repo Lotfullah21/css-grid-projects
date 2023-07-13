@@ -1,0 +1,461 @@
+/* 
+===============
+Variables
+===============
+*/
+
+:root {
+  /* primary color */
+  --clr--primary-1: rgb(12, 10, 151);
+  --clr--primary-3: rgb(35, 15, 220);
+  --clr--primary-5: rgb(52, 70, 229);
+  --clr--primary-6: rgb(13, 232, 239);
+  --clr--primary-8: rgb(83, 227, 234);
+  /* dark grey */
+  --clr--grey-1: rgb(35, 36, 38);
+  --clr--grey-2: rgb(52, 54, 57);
+  --clr--grey-3: rgb(69, 72, 76);
+  /* light grey */
+  --clr--grey-4: rgb(156, 163, 170);
+  --clr--grey-5: rgb(195, 219, 255);
+  --clr--gtey-6: rgb(243, 244, 245);
+  /* black and white */
+  --clr-white: #fff;
+  --clr-black: black;
+  --letter-spacing: 0.118rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --transition: all 0.2s linear;
+  --line-height: 1.5;
+}
+
+/* 
+===============
+Global styles
+===============
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--clr-white);
+  color: var(--clr-black);
+  line-height: var(--line-height);
+  font-family: "Fira Code", monospace;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing);
+  margin-bottom: 1.2345rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  margin-bottom: 0;
+}
+p {
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+.btn {
+  background: var(--clr--grey-2);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  border: 3px solid var(--clr--grey-4);
+  margin: 3rem;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--clr--grey-4);
+  color: var(--clr-white);
+}
+
+/* 
+===============
+Navbar
+===============
+*/
+
+.navbar {
+  background-color: var(--clr--grey-4);
+  padding: 0 2rem;
+}
+
+.navbar a {
+  display: block;
+  text-transform: capitalize;
+  padding: 0 2rem;
+  letter-spacing: var(--letter-spacing);
+  transition: var(--transition);
+}
+.navbar a:hover {
+  color: var(--clr--primary-4);
+}
+
+@media screen and (min-width: 768px) {
+  .navbar ul {
+    max-width: 1190px;
+    padding: 2rem 0rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .navbar a {
+    /* background: white; */
+    text-align: center;
+    margin: 1px;
+  }
+}
+
+/* 
+--1--
+===============
+Hero
+===============
+*/
+
+.hero-header {
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background: grey;
+  color: white;
+}
+
+.hero-banner p {
+  width: 80%;
+  max-width: 560px;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .hero-banner {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .hero-header {
+    background: linear-gradient(
+        rgba(11, 24, 22, 0.218),
+        rgba(16, 16, 18, 0.374)
+      ),
+      url(../assets/school/light-1.jpg) center/cover no-repeat;
+  }
+  .hero-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-banner p {
+    width: 100%;
+  }
+}
+
+/* 
+--2--
+===============
+Cards
+===============
+*/
+.card-img {
+  object-fit: cover;
+}
+
+.cards-title {
+  text-align: center;
+}
+
+.cards-section {
+  width: 80vw;
+  margin: 1.5rem auto;
+  display: grid;
+  padding: 2rem 3rem;
+  max-width: 1192px;
+  column-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* important. */
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin-bottom: 3.4rem;
+  box-shadow: var(--dark-shadow);
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.card-footer {
+  background: var(--clr--grey-5);
+  padding: 0.5rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  color: rgb(44, 13, 182);
+  margin-bottom: 0;
+}
+
+.instagram {
+  color: rgb(237, 56, 56);
+}
+.youtube {
+  color: rgb(255, 0, 0);
+}
+.twitter {
+  color: rgb(34, 115, 255);
+}
+.facebook {
+  color: rgb(33, 33, 255);
+}
+
+/* @media screen and (min-width: 768px) {
+  .cards-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1190px) {
+  .cards-section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} */
+
+/* adding multi column layout */
+/* (1192- 2(1.5*16))/3 */
+/* .cards-section {
+  display: grid;
+  column-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+} */
+
+/* 
+===============
+Navbar
+===============
+*/
+
+.tiles {
+  padding: 4rem 0;
+}
+
+.tiles-title {
+  text-align: center;
+}
+
+.tiles-center {
+  margin: 2rem auto;
+  width: 90vw;
+  max-width: 1190px;
+  display: grid;
+  row-gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .tiles-center {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 9928px) {
+  .tiles-center {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1008px) {
+  .tiles-center {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 200px);
+    row-gap: 1rem;
+    grid-template-areas:
+      "a a a b"
+      "a a a c"
+      "d d d d"
+      "e f f f"
+      "e g h i";
+  }
+  .tiles img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .tile-1 {
+    grid-area: a;
+  }
+
+  .tile-2 {
+    grid-area: b;
+  }
+
+  .tile-3 {
+    grid-area: c;
+  }
+
+  .tile-4 {
+    grid-area: d;
+  }
+
+  .tile-5 {
+    grid-area: e;
+  }
+
+  .tile-6 {
+    grid-area: f;
+  }
+
+  .tile-7 {
+    grid-area: g;
+  }
+
+  .tile-8 {
+    grid-area: h;
+  }
+  .tile-9 {
+    grid-area: i;
+  }
+}
+
+/* 
+===============
+Layout
+===============
+*/
+
+.layout-header {
+  background: var(--clr--grey-2);
+  color: white;
+  padding: 1rem 0;
+  line-height: var(--line-height);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.layout-navbar {
+  background: var(--clr--grey-5);
+}
+/* add either display block or inline-block so that the browser respect the properties like height,width. */
+.layout-navbar a {
+  padding: 1rem;
+  text-transform: capitalize;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.layout-navbar a:hover {
+  color: var(--clr--primary-4);
+  transform: scale(1.02);
+}
+
+.layout-content {
+  padding: 2rem;
+}
+
+.layout-content p {
+  font-size: 0.8rem;
+}
+
+.layout-sidebar {
+  padding: 1rem 1rem;
+  background: rgb(0, 0, 0);
+  justify-items: center;
+  align-items: center;
+  display: grid;
+  /* specify this if you have more than one item to align them */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.layout-footer {
+  padding: 1rem 1rem;
+  background-color: rgb(162, 134, 134);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.layout-footer p {
+  font-size: 1.1rem;
+}
+
+/* Important */
+.layout-main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* auto means take as much as the content
+    1fr means take as much as space possible. */
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+@media screen and (min-width: 568px) {
+  .layout-navbar ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .layout-main {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "a a a a a a a a a a a a"
+      "d b b b b b b b b b b c";
+  }
+  /* .layout-main {
+    grid-template-columns: 200px 1fr 90px;
+    grid-template-rows: auto 1fr auto;
+  } */
+  .layout-header {
+    grid-area: a;
+  }
+  .layout-navbar ul {
+    grid-template-columns: auto;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    padding: 1rem 0;
+    grid-area: d;
+  }
+  .layout-content {
+    grid-area: b;
+  }
+  .layout-sidebar {
+    grid-template-columns: 1fr;
+    grid-area: c;
+  }
+}
